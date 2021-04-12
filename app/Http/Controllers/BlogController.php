@@ -8,6 +8,6 @@ class BlogController extends Controller
 {
     //
     public function index() {
-        echo '@@@@@';
+        return view('blog');
     }
 }
