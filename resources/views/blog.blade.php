@@ -9,16 +9,41 @@
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <!-- 準備給 Vue 的掛載點 -->
-    <div id="app">
-        <!-- 使用我們建立的元件，
-             一個有傳入名字，一個沒有 -->
-        <Hello name="Tony"></Hello>
-        <Hello></Hello>
+
+
+    <div class="container-fluid">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+              <div class="col-4 pt-1">
+                <a class="link-secondary" href="#">Subscribe</a>
+              </div>
+              <div class="col-4 text-center">
+                <a class="blog-header-logo text-dark" href="#">Waterdrop</a>
+              </div>
+              <div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="link-secondary" href="#" aria-label="Search">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+                </a>
+                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+              </div>
+            </div>
+          </header>
+        <section>
+            <artile>
+            @foreach ($posts as $post)
+                <h2>{{ $post->title }}</h2>
+                <time>{{ $post->created_at }}</time>
+                {{ $post->content }}
+            @endforeach
+            </artile>
+        </section>
+        {{ $posts->links() }}
     </div>
+
+
     <!-- 載入打包後的 js 檔 -->
     <script src="{{ asset('js/manifest.js') }}"></script>
     <script src="{{ asset('js/vendor.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
