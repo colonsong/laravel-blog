@@ -15,6 +15,8 @@
     <div id="app">
         <file-upload-component></file-upload-component>
     </div>
+    <script src="{{ asset('js/manifest.js') }}"></script>
+    <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/upload.js') }}"></script>
 </body>
 

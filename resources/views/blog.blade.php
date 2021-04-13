@@ -17,6 +17,8 @@
         <Hello></Hello>
     </div>
     <!-- 載入打包後的 js 檔 -->
-<script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/manifest.js') }}"></script>
+    <script src="{{ asset('js/vendor.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
